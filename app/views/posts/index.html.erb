@@ -1,0 +1,31 @@
+<br/>
+Hello Ruby On Rails
+<br/><br/>
+<%= link_to "New Post", new_post_path %>
+<br/><br/>
+<table>
+  <tbody>
+    <tr>
+      <th>Title</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+    <% unless @posts.blank? %>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.title, post_path(post.id) %></td>
+          <td><%= post.created_at.localtime.strftime('%d/%m/%Y') %></td>
+          <td>
+            <%= link_to "Edit", edit_post_path(post) %>
+            |
+            <%= link_to "Delete", post, :method => :delete, :confirm => "Are you sure?" %>   
+          </td>
+           
+        </tr>
+      <% end %>
+    <% else %>
+      No Records Found in Date Base..!
+    <% end %>
+  </tbody>
+</table>
+

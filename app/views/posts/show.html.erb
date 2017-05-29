@@ -1,0 +1,8 @@
+<br/>
+<p>Title : <%= @post.title %></p>
+<br/>
+<p>Description : <%= @post.description %></p>
+<br/>
+  
+<%= link_to "Edit", edit_post_path(@post.id) %> | <%= link_to "Back", posts_path %>
+
